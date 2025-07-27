@@ -1,0 +1,351 @@
+local gui = Instance.new("ScreenGui", game.CoreGui)
+gui.Name = "Hyper Script"
+
+local introFrame = Instance.new("Frame")
+introFrame.Size = UDim2.new(0.85, 0, 0.85, 0)
+introFrame.Position = UDim2.new(1, 0, 0.5, 0)
+introFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+introFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+introFrame.BorderSizePixel = 0
+introFrame.Parent = gui
+
+local title = Instance.new("TextLabel")
+title.Parent = introFrame
+title.AnchorPoint = Vector2.new(0.5, 0.5)
+title.Position = UDim2.new(0.5, 0, 0.4, 0)
+title.Size = UDim2.new(0.8, 0, 0.2, 0)
+title.BackgroundTransparency = 1
+title.Text = "Hyper Script"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.TextScaled = true
+title.Font = Enum.Font.SourceSansBold
+
+local subText = Instance.new("TextLabel")
+subText.Parent = introFrame
+subText.AnchorPoint = Vector2.new(0.5, 0.5)
+subText.Position = UDim2.new(0.5, 0, 0.6, 0)
+subText.Size = UDim2.new(0.6, 0, 0.1, 0)
+subText.BackgroundTransparency = 1
+subText.Text = "By: Sad_00022🇪🇬🇵🇸"
+subText.TextColor3 = Color3.fromRGB(200, 200, 200)
+subText.TextScaled = true
+subText.Font = Enum.Font.SourceSans
+
+introFrame:TweenPosition(
+UDim2.new(0.5, 0, 0.5, 0),
+Enum.EasingDirection.Out,
+Enum.EasingStyle.Quad,
+0.4,
+true
+)
+
+task.delay(4, function()
+introFrame:TweenPosition(
+UDim2.new(-1, 0, 0.5, 0),
+Enum.EasingDirection.In,
+Enum.EasingStyle.Quad,
+0.3,
+true
+)
+task.wait(0.35)
+introFrame:Destroy()
+end)
+
+local openButton = Instance.new("TextButton")
+openButton.Parent = gui
+openButton.Size = UDim2.new(0, 40, 0, 40)
+openButton.Position = UDim2.new(1, -50, 0, 20)
+openButton.Text = "S"
+openButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+openButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+openButton.BorderSizePixel = 0
+openButton.Draggable = true
+openButton.Active = true
+
+local mainFrame = Instance.new("Frame")
+mainFrame.Parent = gui
+mainFrame.Size = UDim2.new(0, 250, 0, 230)
+mainFrame.Position = UDim2.new(0.5, -125, 0.5, -115)
+mainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+mainFrame.Visible = false
+
+local titleLabel = Instance.new("TextLabel")
+titleLabel.Parent = mainFrame
+titleLabel.Size = UDim2.new(1, 0, 0, 25)
+titleLabel.Position = UDim2.new(0, 0, 0, 0)
+titleLabel.BackgroundTransparency = 1
+titleLabel.Text = "Dev By:Sad_00022🇪🇬🇵🇸"
+titleLabel.Font = Enum.Font.SourceSansBold
+titleLabel.TextSize = 18
+titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+titleLabel.TextXAlignment = Enum.TextXAlignment.Center
+
+local toggleLabel = Instance.new("TextLabel")
+toggleLabel.Parent = mainFrame
+toggleLabel.Size = UDim2.new(0.7, 0, 0, 40)
+toggleLabel.Position = UDim2.new(0.05, 0, 0, 30)
+toggleLabel.BackgroundTransparency = 1
+toggleLabel.Text = "تفعيل أوتو فارم"
+toggleLabel.Font = Enum.Font.SourceSansBold
+toggleLabel.TextSize = 18
+toggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+toggleLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+local toggleBox = Instance.new("TextButton")
+toggleBox.Parent = mainFrame
+toggleBox.Size = UDim2.new(0, 30, 0, 30)
+toggleBox.Position = UDim2.new(0.8, 0, 0, 35)
+toggleBox.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+toggleBox.Text = ""
+toggleBox.BorderSizePixel = 0
+
+local checkMark = Instance.new("TextLabel")
+checkMark.Parent = toggleBox
+checkMark.Size = UDim2.new(1, 0, 1, 0)
+checkMark.Position = UDim2.new(0, 0, 0, 0)
+checkMark.BackgroundTransparency = 1
+checkMark.Text = "✅"
+checkMark.Visible = false
+checkMark.TextColor3 = Color3.fromRGB(0, 255, 0)
+checkMark.TextScaled = true
+
+local reachToggleLabel = Instance.new("TextLabel")
+reachToggleLabel.Parent = mainFrame
+reachToggleLabel.Size = UDim2.new(0.7, 0, 0, 40)
+reachToggleLabel.Position = UDim2.new(0.05, 0, 0, 75)
+reachToggleLabel.BackgroundTransparency = 1
+reachToggleLabel.Text = "تفعيل ريتش"
+reachToggleLabel.Font = Enum.Font.SourceSansBold
+reachToggleLabel.TextSize = 18
+reachToggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+reachToggleLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+local reachToggleBox = Instance.new("TextButton")
+reachToggleBox.Parent = mainFrame
+reachToggleBox.Size = UDim2.new(0, 30, 0, 30)
+reachToggleBox.Position = UDim2.new(0.8, 0, 0, 80)
+reachToggleBox.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+reachToggleBox.Text = ""
+reachToggleBox.BorderSizePixel = 0
+
+local reachCheckMark = Instance.new("TextLabel")
+reachCheckMark.Parent = reachToggleBox
+reachCheckMark.Size = UDim2.new(1, 0, 1, 0)
+reachCheckMark.Position = UDim2.new(0, 0, 0, 0)
+reachCheckMark.BackgroundTransparency = 1
+reachCheckMark.Text = "✅"
+reachCheckMark.Visible = false
+reachCheckMark.TextColor3 = Color3.fromRGB(0, 255, 0)
+reachCheckMark.TextScaled = true
+
+local killToggleLabel = Instance.new("TextLabel")
+killToggleLabel.Parent = mainFrame
+killToggleLabel.Size = UDim2.new(0.7, 0, 0, 40)
+killToggleLabel.Position = UDim2.new(0.05, 0, 0, 120)
+killToggleLabel.BackgroundTransparency = 1
+killToggleLabel.Text = "قتل تلقائي"
+killToggleLabel.Font = Enum.Font.SourceSansBold
+killToggleLabel.TextSize = 18
+killToggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+killToggleLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+local killToggleBox = Instance.new("TextButton")
+killToggleBox.Parent = mainFrame
+killToggleBox.Size = UDim2.new(0, 30, 0, 30)
+killToggleBox.Position = UDim2.new(0.8, 0, 0, 125)
+killToggleBox.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+killToggleBox.Text = ""
+killToggleBox.BorderSizePixel = 0
+
+local killCheckMark = Instance.new("TextLabel")
+killCheckMark.Parent = killToggleBox
+killCheckMark.Size = UDim2.new(1, 0, 1, 0)
+killCheckMark.Position = UDim2.new(0, 0, 0, 0)
+killCheckMark.BackgroundTransparency = 1
+killCheckMark.Text = "✅"
+killCheckMark.Visible = false
+killCheckMark.TextColor3 = Color3.fromRGB(0, 255, 0)
+killCheckMark.TextScaled = true
+
+local teleportToggleLabel = Instance.new("TextLabel")
+teleportToggleLabel.Parent = mainFrame
+teleportToggleLabel.Size = UDim2.new(0.7, 0, 0, 40)
+teleportToggleLabel.Position = UDim2.new(0.05, 0, 0, 165)
+teleportToggleLabel.BackgroundTransparency = 1
+teleportToggleLabel.Text = "آداة إنتقال"
+teleportToggleLabel.Font = Enum.Font.SourceSansBold
+teleportToggleLabel.TextSize = 18
+teleportToggleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+teleportToggleLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+local teleportToggleBox = Instance.new("TextButton")
+teleportToggleBox.Parent = mainFrame
+teleportToggleBox.Size = UDim2.new(0, 30, 0, 30)
+teleportToggleBox.Position = UDim2.new(0.8, 0, 0, 170)
+teleportToggleBox.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+teleportToggleBox.Text = ""
+teleportToggleBox.BorderSizePixel = 0
+
+local teleportCheckMark = Instance.new("TextLabel")
+teleportCheckMark.Parent = teleportToggleBox
+teleportCheckMark.Size = UDim2.new(1, 0, 1, 0)
+teleportCheckMark.Position = UDim2.new(0, 0, 0, 0)
+teleportCheckMark.BackgroundTransparency = 1
+teleportCheckMark.Text = "✅"
+teleportCheckMark.Visible = false
+teleportCheckMark.TextColor3 = Color3.fromRGB(0, 255, 0)
+teleportCheckMark.TextScaled = true
+
+local closeButton = Instance.new("TextButton")
+closeButton.Parent = mainFrame
+closeButton.Size = UDim2.new(0, 30, 0, 30)
+closeButton.Position = UDim2.new(1, -35, 0, 5)
+closeButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+closeButton.Text = "X"
+closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+closeButton.BorderSizePixel = 0
+closeButton.Font = Enum.Font.SourceSansBold
+closeButton.TextScaled = true
+
+local isEnabled = false
+local isReachEnabled = false
+local isKillEnabled = false
+local notificationShown = false
+local player = game.Players.LocalPlayer
+local waitAfterDeath = false
+
+local function isForbiddenPart(part)
+for _, d in pairs(part:GetDescendants()) do
+if (d:IsA("TextLabel") or d:IsA("TextButton")) and string.find(d.Text, "الماب") then
+return true
+end
+end
+return false
+end
+
+local function isForbiddenNearby(targetPart)
+local forbiddenDistance = 5
+for _, part in pairs(workspace:GetDescendants()) do
+if part:IsA("BasePart") and isForbiddenPart(part) then
+if (part.Position - targetPart.Position).Magnitude <= forbiddenDistance then
+return true
+end
+end
+end
+return false
+end
+
+local function isInsideAnyBackpack(part)
+for _, plr in pairs(game.Players:GetPlayers()) do
+if plr:FindFirstChild("Backpack") and part:IsDescendantOf(plr.Backpack) then
+return true
+end
+if plr.Character and part:IsDescendantOf(plr.Character) then
+return true
+end
+end
+return false
+end
+
+local function autoFarm()
+local allParts = {}
+for _, part in pairs(workspace:GetDescendants()) do
+if (part:IsA("PointLight") or part:IsA("SpotLight") or part:IsA("ParticleEmitter")) and not isInsideAnyBackpack(part) then
+table.insert(allParts, part.Parent)
+end
+end
+for _, part in pairs(allParts) do
+if not isForbiddenPart(part) and not isForbiddenNearby(part) then
+if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+player.Character.HumanoidRootPart.CFrame = part.CFrame + Vector3.new(0, 3, 0)
+return
+end
+end
+end
+end
+
+local function startAutoFarm()
+while isEnabled do
+if waitAfterDeath then
+task.wait(3)
+waitAfterDeath = false
+end
+autoFarm()
+task.wait(0.2)
+end
+end
+
+local function autoKill()
+while isKillEnabled do
+if player.Character and player.Character:FindFirstChild("Humanoid") and player.Character.Humanoid.Health > 0 then
+player.Character.Humanoid.Health = 0
+end
+task.wait(0.2)
+end
+end
+
+player.CharacterAdded:Connect(function()
+waitAfterDeath = true
+if isKillEnabled then
+task.spawn(autoKill)
+end
+end)
+
+toggleBox.MouseButton1Click:Connect(function()
+isEnabled = not isEnabled
+checkMark.Visible = isEnabled
+toggleLabel.Text = isEnabled and "تعطيل أوتو فارم" or "تفعيل أوتو فارم"
+
+if isEnabled then  
+    task.spawn(startAutoFarm)  
+end
+
+end)
+
+reachToggleBox.MouseButton1Click:Connect(function()
+isReachEnabled = not isReachEnabled
+reachCheckMark.Visible = isReachEnabled
+reachToggleLabel.Text = isReachEnabled and "تعطيل ريتش" or "تفعيل ريتش"
+
+if isReachEnabled then  
+    loadstring(game:HttpGet("https://pastebin.com/raw/SP5WGAJs"))()  
+end
+
+end)
+
+killToggleBox.MouseButton1Click:Connect(function()
+isKillEnabled = not isKillEnabled
+killCheckMark.Visible = isKillEnabled
+
+if isKillEnabled then  
+    task.spawn(autoKill)  
+end
+
+end)
+
+teleportToggleBox.MouseButton1Click:Connect(function()
+if teleportCheckMark.Visible == false then
+teleportCheckMark.Visible = true
+loadstring(game:HttpGet("https://pastebin.com/raw/cH0LWX3q"))()
+else
+teleportCheckMark.Visible = false
+end
+end)
+
+closeButton.MouseButton1Click:Connect(function()
+mainFrame.Visible = false
+end)
+
+openButton.MouseButton1Click:Connect(function()
+mainFrame.Visible = not mainFrame.Visible
+end)
+
+if not notificationShown then
+game.StarterGui:SetCore("SendNotification", {
+Title = "Script By Sad_00022",
+Text = "صانع السكربت Sad_00022",
+Duration = 8
+})
+notificationShown = true
+end
+
